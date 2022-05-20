@@ -1,0 +1,10 @@
+
+public class MethodsExamples {
+	
+	// method=function=procedure
+	
+	static void sum() {
+		System.out.println("sum");
+	}
+
+}

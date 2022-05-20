@@ -1,5 +1,5 @@
 
-public class Hello {
+public class Driver {
 
 	public static void main(String[] args) {
 
@@ -10,6 +10,13 @@ public class Hello {
 
 		// this is how u call static function
 		MethodsExamples.sum();
+		
+		// constructors
+		
+		McDonald mcDonald = new McDonald(2,500);
+		System.out.println(mcDonald.toString());
+		
+		
 
 	}
 

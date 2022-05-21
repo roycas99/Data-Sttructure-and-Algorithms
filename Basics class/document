@@ -3,3 +3,7 @@ to  indent/ format =ctrl + shift +f.
 git config credential.helper 'cache --timeout=14400' ==4hr
 
 To generate getters and setters, do the following: Create the fields you want in the class then press Alt+Shift+S, R. A dialog will pop up allowing you to choose the fields you want to generate getters and setters for. Click Select All to create getters/setters for all fields.
+
+// to launch termial ctrl ,alt and T
+
+// to run : ctrl +F11

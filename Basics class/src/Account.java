@@ -4,12 +4,11 @@ public class Account {
 	private String ownerName;
 	private double balance = 0;
 	private int accountNumber;
-	protected  static int NoOfAccounts;
+	protected static int NoOfAccounts;
 
 	// construction
 	public Account(String name) {
 		this.ownerName = name;
-		
 
 	}
 
@@ -29,18 +28,31 @@ public class Account {
 	public int getAccountNumber() {
 		return accountNumber;
 	}
-	
+
 	// method for fund
-	
+
 	public void fund(Double amount) {
-		if(amount <= 0) {System.out.println("not enought money to deposit");}
-		else{
+		if (amount <= 0) {
+			System.out.println("not enought money to deposit");
+		} else {
 			balance += amount;
-			
-			
-			;}
-			
-			
+
+			;
+		}
+
+	}
+
+	// withdraw Method
+
+	public boolean withdraw(double amount) {
+		if (amount >= balance) {
+			System.out.println("insuffient");
+			return false;
+		} else {
+			balance -= amount;
+			return true;
+		}
+
 	}
 
 // generate to string
@@ -51,7 +63,7 @@ public class Account {
 	}
 
 // generate equals
-	//@Override
+	// @Override
 //	public boolean equals(Object obj) {
 //		if (this == obj)
 //			return true;

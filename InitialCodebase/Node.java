@@ -58,5 +58,10 @@ public class Node {
 		incomingEdges.add(e);
 	}
 	
+	// tostring
+	public String toString() {
+		return name;
+	}
+	
 }
 

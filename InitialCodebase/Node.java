@@ -60,7 +60,7 @@ public class Node {
 	
 	// tostring
 	public String toString() {
-		return name;
+		return name + "" + abbrev + "outDegree" + outgoingEdges.size() + "Indegree" +incomingEdges.size();
 	}
 	
 }

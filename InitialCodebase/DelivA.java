@@ -44,14 +44,20 @@ public class DelivA {
 		// sort them
 		Collections.sort(graph.getNodeList(), new IndegreeComparator());
 		// print
-		System.out.println("Indegree: ");
+		int count = 1;
+		System.out.println(count + " " + "Indegree: ");
 		for (int i = 0; i < graph.getNodeList().size(); i++) {
+			// increment
+			count++;
 
-			System.out.println(graph.getNodeList().get(i).formatIn());
+			System.out.println(count + " " + graph.getNodeList().get(i).formatIn());
+
 		}
 
 		// to separate indegree and out degree print
-		System.out.println();
+		// increment
+		count++;
+		System.out.println(count);
 
 // outgoing class
 
@@ -59,10 +65,16 @@ public class DelivA {
 		Collections.sort(graph.getNodeList(), new OutDegreeComparator());
 
 		// print
-		System.out.println("Outsdegree: ");
+		// increment
+		count++;
+		System.out.println(count + " " + "Outsdegree: ");
 		for (int i = 0; i < graph.getNodeList().size(); i++) {
-			System.out.println(graph.getNodeList().get(i).formatOut());
+			count++;
+			System.out.println(count + " " + graph.getNodeList().get(i).formatOut());
 		}
+		// for 28
+		count++;
+		System.out.println(count);
 
 	} // end of runDeliva
 

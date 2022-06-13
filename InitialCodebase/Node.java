@@ -9,6 +9,13 @@ public class Node {
 	private String abbrev; // The abbreviation for the Node
 	private ArrayList<Edge> outgoingEdges;
 	private ArrayList<Edge> incomingEdges;
+	// for Delivery B
+	private String color;
+	private Node previous;
+	public int d; // discovery time
+	public int f; // final time
+	
+	
 
 	public Node(String abbreviation) {
 		abbrev = abbreviation;
@@ -16,7 +23,25 @@ public class Node {
 		name = null;
 		outgoingEdges = new ArrayList<Edge>();
 		incomingEdges = new ArrayList<Edge>();
+		
+		
 	}
+	
+	// add to adjacent nodes
+	
+//	public void addToAdj( Node n) {
+//		
+//			
+//		} // end of adjacent nodes
+//		
+	//public ArrayList<Node> getAdjacentNodes() {
+		//return adjacentNodes;
+		
+	//}
+		
+		
+		
+	//}
 
 	public String getAbbrev() {
 		return abbrev;
@@ -57,6 +82,24 @@ public class Node {
 	public void addIncomingEdge(Edge e) {
 		incomingEdges.add(e);
 	}
+	 // all about color
+	public void setColor(String color) {
+		this.color =color;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	// all about previous Node
+	public void setPreviousNode (Node n) {
+		this.previous = n;
+	}
+	
+	public Node getPreviousNode () {
+		return previous;
+	}
+	
 
 	// tostring to format
 	public String toString() {

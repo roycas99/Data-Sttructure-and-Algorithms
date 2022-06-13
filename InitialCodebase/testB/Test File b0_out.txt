@@ -1,0 +1,25 @@
+DFS of graph
+
+Node	Disc	Finish
+A	1	10
+B	6	7
+C	2	9
+D	4	5
+E	3	8
+
+Edge Classification:
+
+Edge	Type
+A->B	Forward
+A->C	Tree
+A->E	Forward
+B->A	Back
+B->C	Back
+B->D	Cross
+C->E	Tree
+D->A	Back
+D->C	Back
+D->E	Back
+E->B	Tree
+E->C	Back
+E->D	Tree

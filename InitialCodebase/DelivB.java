@@ -71,6 +71,10 @@ public class DelivB {
 		DFS_VISIT(g, g.startingNode());
 
 		// we only do DFS_visit if node is undiscover
+
+		// sort Nodes by name  before you discover in 
+		NodeSorted ns = new NodeSorted();
+		Collections.sort(g.getNodeList(), ns);
 		for (Node node2 : g.getNodeList()) {
 			if (node2.getColor().equalsIgnoreCase("WHITE")) {
 				DFS_VISIT(g, node2);
@@ -92,6 +96,7 @@ public class DelivB {
 		for (Edge e : u.getOutgoingEdges()) {
 
 			Node v = e.getHead();
+
 			if (v.getColor().equalsIgnoreCase("WHITE")) {
 
 				// to set type tree

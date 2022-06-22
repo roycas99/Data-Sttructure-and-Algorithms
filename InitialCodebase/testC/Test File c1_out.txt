@@ -1,0 +1,7 @@
+The minimum spanning tree has a total cost of 15 and includes the following edges:
+F-G
+C-F
+D-F
+A-D
+B-A
+E-D

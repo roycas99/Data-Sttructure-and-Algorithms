@@ -173,14 +173,14 @@ public class Node  {
 		if (getClass() != obj.getClass())
 			return false;
 		Node other = (Node) obj;
-		if (name == null) {
-			if (other.name != null)
+		if (key == null) {
+			if (other.key != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!key.equals(other.key))
 			return false;
 		return true;
 	}
 
 	
 
-}
+} // end of Class Node 

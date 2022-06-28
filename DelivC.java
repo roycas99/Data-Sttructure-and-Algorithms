@@ -54,7 +54,7 @@ public class DelivC {
 		
 		// Node[] node = new Node[graph.getNodeList().size()];
 		
-		int x=0;
+		
 		for (Edge e : MST_PRIM()) {
 
 			  System.out.println(e.getHead().formatMSP() +  "-"+ e.getTail().formatMSP());

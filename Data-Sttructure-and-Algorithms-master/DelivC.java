@@ -42,7 +42,7 @@ public class DelivC {
 	private void runDelivC() {
 
 		MST_PRIM();
-		System.out.println("Hell0");
+		System.out.println("Hell0 Farmande");
 		
 		 
 		

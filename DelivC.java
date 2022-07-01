@@ -47,9 +47,10 @@ public class DelivC {
 		for (Edge e : MST_PRIM()) {
 			c += e.getDistance();
 		}
-System.out.println("The minimum spanning tree has a total cost of " + c + " and includes the following edges: ");
+		System.out
+				.println("The minimum spanning tree has a total cost of " + c + " and includes the following edges: ");
 
-		
+		// Node[] node = new Node[graph.getNodeList().size()];
 
 		for (Edge e : MST_PRIM()) {
 

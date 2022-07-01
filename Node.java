@@ -2,7 +2,7 @@ import java.util.*;
 
 // A node of a graph for the Spring 2018 ICS 340 program
 
-public class Node  {
+public class Node {
 
 	private String name;
 	private String value; // The value of the Node which was stored in the value column
@@ -14,14 +14,9 @@ public class Node  {
 	private Node previous;
 	public int d; // discovery time
 	public int f; // final time
-	
+
 	// for Delivery C
 	public Integer key;
-	
-	
-	
-	
-	
 
 	public Integer getKey() {
 		return key;
@@ -37,25 +32,8 @@ public class Node  {
 		name = null;
 		outgoingEdges = new ArrayList<Edge>();
 		incomingEdges = new ArrayList<Edge>();
-		
-		
+
 	}
-	
-	// add to adjacent nodes
-	
-//	public void addToAdj( Node n) {
-//		
-//			
-//		} // end of adjacent nodes
-//		
-	//public ArrayList<Node> getAdjacentNodes() {
-		//return adjacentNodes;
-		
-	//}
-		
-		
-		
-	//}
 
 	public String getAbbrev() {
 		return abbrev;
@@ -96,24 +74,24 @@ public class Node  {
 	public void addIncomingEdge(Edge e) {
 		incomingEdges.add(e);
 	}
-	 // all about color
+
+	// all about color
 	public void setColor(String color) {
-		this.color =color;
+		this.color = color;
 	}
-	
+
 	public String getColor() {
 		return color;
 	}
-	
+
 	// all about previous Node
-	public void setPreviousNode (Node n) {
+	public void setPreviousNode(Node n) {
 		this.previous = n;
 	}
-	
-	public Node getPreviousNode () {
+
+	public Node getPreviousNode() {
 		return previous;
 	}
-	
 
 	// tostring to format
 	public String toString() {
@@ -132,27 +110,22 @@ public class Node  {
 		return "Node " + abbrev + " has outdegree " + outgoingEdges.size();
 
 	}
-	
-	// to format Edges of MSP
-		public String formatMSP() {
-			return  abbrev;
-		}
-	
-	
 
-	
-	//  find edge method
+	// to format Edges of MSP --DelivC
+	public String formatMSP() {
+		return abbrev;
+	}
+
+	// find edge method
 	public Edge findEdge(Node n) {
 		// n is parent
-		for(Edge e : incomingEdges) {
-			if(e.getTail().equals(n)) {
+		for (Edge e : incomingEdges) {
+			if (e.getTail().equals(n)) {
 				return e;
 			}
-			
-			
-			
-		}// end for loop
-		
+
+		} // end for loop
+
 		return null;
 	}
 
@@ -164,6 +137,8 @@ public class Node  {
 		return result;
 	}
 
+// use name for equality because each node has unique name. do not use key.
+	// this is important for KeyComparator class
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -180,7 +155,5 @@ public class Node  {
 			return false;
 		return true;
 	}
-
-	
 
 }

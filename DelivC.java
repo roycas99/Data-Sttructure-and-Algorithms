@@ -42,39 +42,32 @@ public class DelivC {
 	private void runDelivC() {
 
 		MST_PRIM();
-		System.out.println("Hell0");
-		
-		 
-		
-		int c=0;
-		for(Edge  e : MST_PRIM()) {
+
+		int c = 0;
+		for (Edge e : MST_PRIM()) {
 			c += e.getDistance();
 		}
-		System.out.println("The minimum spanning tree has a total cost of " + c +" and includes the following edges: ");
+System.out.println("The minimum spanning tree has a total cost of " + c + " and includes the following edges: ");
+
 		
-		// Node[] node = new Node[graph.getNodeList().size()];
-		
-		
+
 		for (Edge e : MST_PRIM()) {
 
-			  System.out.println(e.getHead().formatMSP() +  "-"+ e.getTail().formatMSP());
-			  
-		}
-		
+			System.out.println(e.getHead().formatMSP() + "-" + e.getTail().formatMSP());
 
-		//
+		}
 
 	} // end of runDelivC
 
-	// Priority Queue Implementation
+	// compares keys of the nodes
 	Comparator<Node> cm = new KeyComparator();
-	 
 
 	public ArrayList<Edge> MST_PRIM() {
-	PriorityQueue<Node> Q = new PriorityQueue<Node>(graph.getNodeList().size(),cm); // from java.util
+		// Priority Queue Implementation
+		PriorityQueue<Node> Q = new PriorityQueue<Node>(graph.getNodeList().size(), cm); // from java.util
 
 		ArrayList<Edge> MST = new ArrayList<Edge>();
-		// Initialize
+		// Initialize all the nodes in the graph
 		for (Node n1 : graph.getNodeList()) {
 
 			n1.setKey(Integer.MAX_VALUE);
@@ -84,7 +77,6 @@ public class DelivC {
 
 		// set key of start node to zero
 		graph.startingNode().setKey(0);
-		
 
 		// add all vertices into Queue
 		for (Node n : graph.getNodeList()) {
@@ -94,26 +86,27 @@ public class DelivC {
 		// while Q is not empty
 		while (!Q.isEmpty()) {
 			Node n3 = Q.poll();// extract-minHeap
-// add the edge into the  MSTlist
+            // add the edge into the  MST -list
 			if (n3.getPreviousNode() != null) {
 				Edge e = n3.findEdge(n3.getPreviousNode());
 				MST.add(e);
 
 			}
 
-
 			for (Edge e : n3.getOutgoingEdges()) {
-				// let me sort outgoing edges
+				// let me sort outgoing edges but PQ will do for us
 
 				Node v = e.getHead();
 
 				if (Q.contains(v) && e.getDistance() < v.getKey()) {
+					Q.remove(v); // remove the node from Queue before update their key
 					v.setPreviousNode(e.getTail());
 					v.setKey(e.getDistance());
+					Q.add(v); // add the node back to the Queue after update their key
 
 				} // end of if
+
 			} // end of for loop
-			
 
 		}
 

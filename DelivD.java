@@ -52,7 +52,7 @@ public class DelivD {
 		// before last city
 		System.out.println(graph.getNodeList().get(i));
 		System.out.println(graph.getNodeList().get(j));
-		
+
 		System.out.println(dist(graph.getNodeList().get(i),graph.getNodeList().get(j)));
 
 		System.out.println(bitonic(i, j));

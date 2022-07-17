@@ -62,6 +62,7 @@ public class DelivD {
 	// Bitonic method
 
 	public int bitonic(int i, int j) {
+		 int min=Integer.MAX_VALUE;
 
 		// base case: if we only have 2 point(i,j) then we return their distance
 		if (i == 0 && j == 1) {
@@ -71,22 +72,29 @@ public class DelivD {
 		// second case if i is less than j-1
 		else if (i < j - 1) {
 
-			return bitonic(i, j - 1) + dist(graph.getNodeList().get(j), graph.getNodeList().get(j - 1));
+			return bitonic(i, j - 1) + dist(graph.getNodeList().get(j-1), graph.getNodeList().get(j));
 
 		}
+		
 		// third case if i and j are equal or i = j-1
+		
 		else {
+			
+			int temp;
 			for (int k = 0; k < j - 1; k++) {
-				int min=Integer.MAX_VALUE;
-				int temp=(bitonic(k, j - 1) + dist(graph.getNodeList().get(k), graph.getNodeList().get(j)));
-				if(temp < min) {
-				min= temp;
-				return min;
-				}
+				
+				 temp=(bitonic(k, j - 1) + dist(graph.getNodeList().get(k), graph.getNodeList().get(j)));
+				 // ternary Operator 
+				 min = (temp < min) ? temp : min;
+				
+
+				} // end of for loop;
+			return min;
+			
 			}
-		}
+		
 		// test
-		return 2;
+	
 
 	} // end of Bitonic_Travel
 
